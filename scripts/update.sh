@@ -17,3 +17,5 @@ sudo service tomcat stop
 
 # Stop Jetty Service
 sudo service jetty9 stop
+
+./clear_utorrent_trash.sh

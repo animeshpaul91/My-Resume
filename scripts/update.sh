@@ -18,4 +18,16 @@ sudo service tomcat stop
 # Stop Jetty Service
 sudo service jetty9 stop
 
-./clear_utorrent_trash.sh
+# Clear uTorrent Trash and torrent files
+TARGETS=(
+    "${HOME}/snap/utorrent/current/.local/share/Trash/files"
+    "${HOME}/snap/utorrent/current/utorrent"
+)
+
+for TARGET in "${TARGETS[@]}"; do
+    if [[ "$TARGET" == *Trash* ]]; then
+        find "$TARGET" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+    else
+        find "$TARGET" -maxdepth 1 -type f -name "*.torrent" -exec rm -f {} +
+    fi
+done

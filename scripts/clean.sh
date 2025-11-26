@@ -59,5 +59,6 @@ for dir in "${TARGETS[@]}"; do
 done
 
 log "Disk usage after cleanup:"
-disk
+
+df -kPh
 

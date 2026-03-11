@@ -42,7 +42,7 @@ body {
   background-color: #fff;
 }
 a, a:visited {
-  color: #4e2a8e;
+  color: #2563eb;
   text-decoration: underline;
 }
 a.spec, a.spec:visited {
@@ -50,7 +50,7 @@ a.spec, a.spec:visited {
 }
 a:hover {
   text-decoration: none;
-  color: #000;
+  color: #1d4ed8;
 }
 a:focus { outline: none; }
 a:hover, a:active { outline: 0; }
@@ -478,8 +478,9 @@ iframe.video { border:0; }
   width: 22%;
 }
 .wrap {
-  max-width: 860px;
+  max-width: 880px;
   margin: 0 auto;
+  padding: 0 20px;
   position: relative;
 }
 
@@ -510,19 +511,31 @@ iframe.video { border:0; }
 }
 #menu-primary li a {
   line-height: 1em;
-  font-size: 1em;
+  font-size: 0.9em;
+  font-weight: 500;
   margin-left: 20px;
   display: block;
   text-transform: uppercase;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  color: #555;
 }
-#menu-primary li.current-menu-item a { color: #aaa; }
-#menu-primary ul li a:hover { color: #222; }
+#menu-primary li.current-menu-item a {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+#menu-primary ul li a:hover {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
 
 body.home             div.menu li.home            a,
 body.projects         div.menu li.projects        a,
 body.talks            div.menu li.talks           a,
 body.blog             div.menu li.blog            a {
-  color: #aaa;
+  color: #2563eb;
+  border-bottom-color: #2563eb;
 }
 
 /* Header
@@ -653,7 +666,7 @@ body.blog             div.menu li.blog            a {
 .singular-page .entry-title { color: #ccc; }
 .singular-page .entry-title, .singular-attachment .entry-title { margin-bottom: 1.2em; }
 .entry-title a, .entry-title a:visited { color: #222; }
-.entry-title a:hover { color: #4e2a5e; }
+.entry-title a:hover { color: #2563eb; }
 
 /* Post bylines/datelines
 -------------------------------------------------------------- */
@@ -686,7 +699,7 @@ body.blog             div.menu li.blog            a {
 
 .entry-summary p a {
   text-decoration: none;
-  color: #381ebc;
+  color: #2563eb;
 }
 
 .talk-title {
@@ -800,13 +813,42 @@ li.image {
 #fotterLinks {
   text-align: center;
   font-size: 14px;
-  padding: 0 0 10px;
+  padding: 10px 0 12px;
+}
+
+#fotterLinks a {
+  text-decoration: none;
+  color: #555;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+#fotterLinks a:hover {
+  color: #2563eb;
+  background-color: #eff6ff;
+}
+
+#fotterLinks a:visited {
+  color: #555;
+}
+
+#fotterLinks svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 #copyright {
   text-align: center;
   font-size: 12px;
-  padding: 0 0 10px;
+  color: #999;
+  padding: 0 0 16px;
 }
 
 #edit-on-github {
@@ -902,15 +944,31 @@ body.learning h4.resource {
   color: #333;
 }
 
+.project-list {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
 .project-list li {
-  line-height: 1.69231em;
-  margin-bottom: 10px;
+  line-height: 1.75em;
+  margin-bottom: 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px 20px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.project-list li:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .project-list li a {
   text-decoration: none;
   font-weight: 600;
-  color: #381ebc;
+  color: #2563eb;
 }
 
 /* Talks */
@@ -1061,4 +1119,75 @@ ol.jekyll-toc li a {
 p {
   text-align: justify;
   text-justify: inter-word;
+}
+
+/* Dark mode
+-------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  html { background-color: #1a1a2e; }
+  body { color: #d1d5db; }
+  #container { background-color: #1a1a2e; }
+
+  h1, h2, h3, h4, h5, h6 { color: #e5e7eb; }
+  #site-title a { color: #f3f4f6; }
+
+  a, a:visited { color: #60a5fa; }
+  a:hover { color: #93bbfd; }
+
+  .entry-summary p a,
+  .project-list li a { color: #60a5fa; }
+
+  .hentry { border-bottom-color: #374151; }
+  hr { border-top-color: #374151; }
+
+  .hentry img, .entry-content img, .widget img {
+    border-color: #374151;
+  }
+
+  .project-list li {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  .project-list li:hover {
+    border-color: #475569;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  code {
+    background: #1e293b;
+    border-color: #334155;
+    color: #d1d5db;
+  }
+  pre {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  #menu-primary li a { color: #9ca3af; }
+  #menu-primary li.current-menu-item a,
+  #menu-primary ul li a:hover,
+  body.home     div.menu li.home     a,
+  body.projects div.menu li.projects a,
+  body.talks    div.menu li.talks    a,
+  body.blog     div.menu li.blog     a {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+  }
+
+  #fotterLinks a,
+  #fotterLinks a:visited { color: #9ca3af; }
+  #fotterLinks a:hover {
+    color: #60a5fa;
+    background-color: #1e293b;
+  }
+
+  #copyright { color: #6b7280; }
+  #copyright a, #copyright a:visited { color: #6b7280; }
+
+  .entry-title a, .entry-title a:visited { color: #e5e7eb; }
+  .entry-title a:hover { color: #60a5fa; }
+
+  .project-batch-title h2 a { color: #e5e7eb; }
+
+  .byline, .byline a, .byline a:visited { color: #6b7280; }
 }

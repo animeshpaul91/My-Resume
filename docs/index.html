@@ -57,7 +57,10 @@
                </h1>
             </div>
             <div id="menu-primary" class="menu-container">
-               <div class="menu">
+               <button class="hamburger" aria-label="Toggle menu" onclick="document.getElementById('menu-primary').classList.toggle('open'); this.classList.toggle('active');">
+               <span></span><span></span><span></span>
+            </button>
+            <div class="menu">
                   <ul id="menu-primary-items">
                      <li class="menu-item home"><a class="spec" href="./index.html">Home</a></li>
                      <li class="menu-item projects"><a class="spec" href="./projects.html">Projects</a></li>

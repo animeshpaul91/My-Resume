@@ -1,0 +1,237 @@
+%-------------------------
+% Resume in Latex
+% Author: ANIMESH PAUL
+% Original Source: https://github.com/jam643/resume
+%------------------------
+
+% supports 10, 11, 12pt font sizes
+% letterpaper = 8.5in x 11in
+\documentclass[letterpaper,11pt]{article}
+
+% set margins
+\usepackage[
+    left=0.5in,
+    right=0.5in,
+    top=0.4in,
+    bottom=0.4in,
+]{geometry}
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\usepackage{enumitem}
+\input{glyphtounicode}
+\usepackage{parskip}
+\usepackage{etoolbox}  % for conditional logic
+\usepackage{csquotes}
+
+
+% is_long_version = true will render a more detailed resume
+\newtoggle{is_long_version} % Define the boolean variable
+\settoggle{is_long_version}{false}
+
+\pagestyle{fancy}
+
+% clear all header and footer fields
+\fancyhf{}
+\fancyfoot{}
+% remove lines between header/footer
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+
+% don't stretch text to fill the entire line
+\raggedbottom
+\raggedright
+% remove horizontal padding from table cells
+\setlength{\tabcolsep}{0in}
+
+% Section heading formatting
+\titleformat{\section}{
+  \scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%%% Set spacing %%%
+% set vertical spacing between sections
+\titlespacing*{\section}
+{0pt} % left indent
+{4pt} % spacing above
+{4pt} % spacing below
+
+\linespread{1.01}  % line spacing
+\setlength{\parskip}{0pt} % paragraph spacing
+
+% bullet list spacing
+\setlist[itemize]{itemsep=0pt} % vertical spacing between bullets
+\def\vspaceAfterBullets{3.5pt} % vertical spacing after bullet lists
+\def\bulletIndent{20pt} % indent of bullet lists
+
+% set bullet list symbol formatting
+\setlist[itemize,1]{label=$\vcenter{\hbox{\tiny$\bullet$}}$} 
+\setlist[itemize,2]{label=$\vcenter{\hbox{\tiny$\bullet$}}$}
+\setlist[itemize,3]{label=$\vcenter{\hbox{\tiny$\circ$}}$}
+
+%-------------------------
+% Custom commands
+
+\newcommand{\bulletItem}[1]{
+  \item\small{
+    {#1}
+  }
+}
+
+% company name -- location
+\newcommand{\companyNameAndLocationHeading}[2]{
+  \item 
+    \begin{tabular*}{1.0\textwidth}[b]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}
+}
+
+% job title -- date
+\newcommand{\titleAndDateHeading}[2]{
+    \item
+    \begin{tabular*}{1.0\textwidth}[b]{l@{\extracolsep{\fill}}r}
+      {\bfseries\itshape\small #1} & \itshape\small #2
+    \end{tabular*}
+}
+
+% project name -- date
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.0\textwidth}[b]{l@{\extracolsep{\fill}}r}
+      \small#1 & #2
+    \end{tabular*}
+}
+
+\newcommand{\sectionListStart}{\begin{itemize}[leftmargin=0pt, label={}]}
+\newcommand{\sectionListEnd}{\end{itemize}}
+
+\newcommand{\outerBulletListStart}{\begin{itemize}[leftmargin=\bulletIndent]}
+\newcommand{\outerBulletListEnd}{\end{itemize}\vspace{\vspaceAfterBullets}}
+
+
+\newcommand{\innerBulletListStart}{\begin{itemize}[leftmargin=\bulletIndent]}
+\newcommand{\innerBulletListEnd}{\end{itemize}}
+
+% blue colored hyperlinks
+\newcommand{\bref}[2]{\href{#1}{\color{blue}{#2}}}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%
+
+\begin{document}
+
+%---------- HEADING ----------
+\def\spaceAfterLogo{0.5pt}
+\begin{center}
+  \textbf{\Huge Animesh Paul} \\ \vspace{3pt}
+  \small
+  \faMobile \hspace{\spaceAfterLogo} \href{tel:2024607195}{(202) 460-7195}
+  $|$
+  \faEnvelope \hspace{\spaceAfterLogo} \href{mailto:ani.nitmz@gmail.com}{ani.nitmz@gmail.com}
+  $|$
+  \faLinkedinSquare \hspace{\spaceAfterLogo} \href{https://www.linkedin.com/in/animeshpaul91}{LinkedIn}
+  $|$
+  \faGithub \hspace{\spaceAfterLogo} \href{https://github.com/animeshpaul91}{GitHub}
+  $|$
+  \faGlobe \hspace{\spaceAfterLogo} \href{https://animeshpaul91.github.io/My-Resume/index.html}{Portfolio}
+  $|$
+  \faMapMarker \hspace{\spaceAfterLogo} \href{https://maps.app.goo.gl/MwkMuXtQffSd48Fa9}{Redmond, WA}
+\end{center}
+
+%----------- EXPERIENCE -----------
+
+\section{Experience}
+\sectionListStart
+
+\companyNameAndLocationHeading
+{Twilio}{Redmond, WA}
+\titleAndDateHeading
+{Software Engineer}{Jan 2022 \textbf{--} Present}
+\outerBulletListStart
+\bulletItem{As a part of the R\&D engineering team, I build key components for Twilio Flex, a mission-critical cloud-based contact center platform that is used by customers across the globe.}
+\outerBulletListEnd
+
+\companyNameAndLocationHeading
+{Visa}{Highlands Ranch, CO}
+\titleAndDateHeading
+{Senior Systems Engineer}{Mar 2020 \textbf{--} Jan 2022}
+\outerBulletListStart
+\bulletItem{Built and deployed SSO service for Thousand Eyes, a SaaS network infrastructure monitoring application by leveraging its RESTful services. Automated user management has rendered a 100\% decline in fulfilment requests.}
+\bulletItem{Engineered a full-stack application for drift management, standardizing config for 30\% of network infrastructure.}
+\bulletItem{Developed a data visualisation service that displays outages on third-party DNS \& CDN service providers.}
+\outerBulletListEnd
+
+\titleAndDateHeading
+{Systems Engineer Intern}{May 2019 \textbf{--} Aug 2019}
+\outerBulletListStart
+\bulletItem{Optimized the execution time in the inter-datacenter NAS switchover by 50\% using a REST-based automation.}
+\bulletItem{Developed an event logger in a private cloud Spring Boot application, allowing for the easy retrieval of event logs directly to the UI, thereby eliminating the need for rigorous troubleshooting.}
+\outerBulletListEnd
+
+\companyNameAndLocationHeading
+{NSE Infotech Services Limited}{Mumbai, India}
+\titleAndDateHeading
+{Systems Analyst}{Jul 2015 \textbf{--} Aug 2018}
+\outerBulletListStart
+\bulletItem{Implemented real-time monitoring with reporting analytics of key metrics for mission-critical applications across 300+ production servers, while achieving a 35\% reduction in the resolution time of critical incidents \& outages.}
+\bulletItem{Maintained and enhanced an in-house ERP software. Significantly facilitated its integration with Active Directory by exposing RESTful web services for user on/off-boarding, thereby reducing operational toil by 40\%.}
+\outerBulletListEnd
+
+\sectionListEnd
+
+%----------- TECHNICAL EXPERTISE -----------
+
+\section{Technical Expertise}
+\sectionListStart
+\bulletItem{\textbf{Programming Languages:} Java, Python, C, C++, Javascript, Typescript, Shellscript.}
+\vspace{\vspaceAfterBullets}
+\bulletItem{\textbf{Databases:} MySQL, SQL Server, PostgreSQL, MongoDB.}
+\vspace{\vspaceAfterBullets}
+\bulletItem{\textbf{Software Frameworks \& Tools:} Spring Boot, Spring MVC, Maven, Tomcat, Linux, Dropwizard, Node.js.}
+\vspace{\vspaceAfterBullets}
+\bulletItem{\textbf{Web Technologies:} HTML5, CSS3, SASS, Bootstrap, REST, SOAP, JSON, XML, YAML, WSDL.}
+\vspace{\vspaceAfterBullets}
+\bulletItem{\textbf{Software Development Methodologies:} Git, SVN, JIRA, Agile, Scrum, TDD, SDLC.}
+\sectionListEnd
+
+%----------- EDUCATION -----------
+
+\section{Education}
+\sectionListStart
+
+\companyNameAndLocationHeading
+{University at Buffalo, The State University of New York}{\textit{Aug 2018 \textbf{--} Feb 2020}}
+\titleAndDateHeading
+{Master of Science in Computer Science and Engineering}{\textbf{GPA: 3.5/4.0}}
+
+\companyNameAndLocationHeading
+{National Institute of Technology, Mizoram}{\textit{Jul 2011 \textbf{--} May 2015}}
+\titleAndDateHeading
+{Bachelor of Technology in Computer Science and Engineering}{\textbf{GPA: 8.8/10.0}}
+\sectionListEnd
+
+%----------- PUBLICATIONS -----------
+
+\section{Publications}
+\sectionListStart
+\bulletItem{Animesh Paul,
+  \textbf{Positive and Negative Association Rule Mining using correlation threshold and dual confidence approach}, 2nd International Conference on Computational Intelligence in Data Mining, Dec 2015.}
+\sectionListEnd
+
+%-------------------------------------------
+\end{document}

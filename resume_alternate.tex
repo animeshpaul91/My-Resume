@@ -1,0 +1,218 @@
+%-------------------------
+% Resume in Latex
+% Author : Animesh Paul
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[T1]{fontenc} % Better font encoding
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{microtype}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\setlength\parindent{24pt}
+\input{glyphtounicode}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4.08003pt} % Fix fancyhdr warning
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.8in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{0pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
+
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\sloppy
+
+
+\begin{center}
+    {\Huge \scshape Animesh Paul} \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faEnvelope\ Redmond, WA ~ \small \raisebox{-0.1\height}\faPhone {}\ 202-460-7195 ~ \href{mailto:ani.nitmz@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{ani.nitmz@gmail.com}} ~ 
+    \href{https://www.linkedin.com/in/animeshpaul91/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/animeshpaul91}}  ~
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {Twilio}{Redmond, WA (Remote)}
+      {Software Engineer}{Jan 2022 - Present}
+      \resumeItemListStart
+        \resumeItem{}
+        {As a part of the R\&D engineering team, I build key components for Twilio Flex, a mission-critical cloud-based contact center platform that is used by customers across the globe.}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+      {Visa}{Highlands Ranch, CO}
+      {Senior Systems Engineer}{Mar 2020 - Jan 2022}
+      \resumeItemListStart
+        \resumeItem{}
+        {Built and deployed SSO service for Thousand Eyes, a SaaS network infrastructure monitoring application by leveraging its RESTful services. Automated user management has rendered a 100\% decline in fulfillment requests.}
+        \resumeItem{}
+        {Engineered a full-stack application for drift management, standardizing config for 30\% of network infrastructure.}
+        \resumeItem{}
+        {Developed a data visualization service that displays outages on third party DNS \& CDN service providers.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Visa}{Highlands Ranch, CO}
+      {Systems Engineer Intern}{May 2019 - Aug 2019}
+      \resumeItemListStart
+        \resumeItem{}
+          {Optimized the execution time in the inter-datacenter NAS switchover by 50\% using a REST based automation.}
+        \resumeItem{}
+        {Developed an event logger in a private cloud Spring Boot application, allowing for the easy retrieval of event logs directly to the UI, thereby eliminating the need for rigorous troubleshooting.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {NSE Infotech Services Limited}{Mumbai, India}
+      {Systems Analyst}{Jul 2015 - Aug 2018}
+      \resumeItemListStart
+      \resumeItem{}
+          {Implemented real-time monitoring with reporting analytics of key metrics for mission-critical applications across 300+ production servers, while achieving a 35\% reduction in the resolution time of critical incidents \& outages.}
+      \resumeItem{}
+          {Maintained and enhanced an in-house ERP software. Significantly facilitated its integration with active directory by exposing RESTful web services for user on/off-boarding, thereby reducing operational toil by 40\%.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+  
+\vspace{-16pt}
+
+%-----------TECHNICAL EXPERTISE-----------
+\section{TECHNICAL EXPERTISE}
+\begin{itemize}[leftmargin=0.15in, label=\textbullet, itemsep=0 pt] % Adjust itemsep as needed
+    \small
+    \item \textbf{Programming Languages}{: Java, Python, C, C++, Javascript, Typescript, Shellscript.}
+    \item \textbf{Software Frameworks \& Tools}{: Spring Boot, Spring MVC, Maven, Tomcat, Linux, Dropwizard, Node.js.}
+    \item \textbf{Web Technologies}{: HTML5, CSS3, SASS, Bootstrap, REST, SOAP, JSON, XML, YAML, WSDL.}
+    \item \textbf{Software Development Methodologies}{: Git, SVN, JIRA, Agile, Scrum, TDD, SDLC.}
+\end{itemize}
+
+\vspace{-16pt}
+
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+     \resumeProjectHeading
+          {\textbf{eCommerce App} $|$ \emph{Java, SpringBoot, Angular, Okta}}{Apr 2021 -- Jun 2021}
+          \resumeItemListStart
+            \resumeItem{Developed a simple e-Commerce online shopping website as a full-stack web application by exposing inventory data from MySQL DB through REST APIs which gets consumed by the frontend app.}
+            \resumeItem{Implemented features to display product data, search for products, add to shopping cart, checkout cart and form validation. In addition, security features were built by leveraging Okta with OAuth2.0.}
+        \resumeItemListEnd
+      \resumeSubHeadingListEnd
+
+\vspace{-16pt}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University at Buffalo, The State University of New York}{Buffalo, NY}
+      {Master of Science in Computer Science and Engineering;  GPA: 3.5/4.0}{Aug 2018 - Feb 2020}
+    \resumeSubheading
+      {National Institute of Technology, Mizoram}{Aizawl MZ, India}
+      {Bachelor of Technology in Computer Science and Engineering;  GPA: 8.8/10.0}{Jul 2011 - May 2015}
+  \resumeSubHeadingListEnd
+
+\vspace{-16pt}
+
+%-------PUBLICATIONS------------------  
+\section{PUBLICATIONS}
+\begin{itemize}[leftmargin=0.15in, label=\textbullet, itemsep=0 pt] % Adjust itemsep as needed
+    \small
+    \item \textbf{Positive and Negative Association Rule Mining using correlation threshold and dual confidence approach}, \\ {2nd International Conference on Computational Intelligence in Data Mining, Dec 2015.}
+\end{itemize}
+\vspace{-16pt}
+ 
+\end{document}
